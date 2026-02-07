@@ -13,7 +13,6 @@ public class player {
     @Column(name = "full_name", unique = true)
     private String full_name;
 
-    // CAMBIO: Usamos Integer (con mayúscula) para permitir nulos
     private Integer age;
 
     private String position;
@@ -42,7 +41,6 @@ public class player {
     private Integer yellow_cards_overall;
     private Integer red_cards_overall;
 
-    // CAMBIO: Usamos Double (con mayúscula) para permitir nulos
     private Double goals_involved_per_90_overall;
     private Double assists_involved_per_90_overall;
     private Double goals_per_90_overall;
@@ -56,7 +54,6 @@ public class player {
         this.full_name = full_name;
     }
 
-    // --- GETTERS Y SETTERS (Actualizados a Integer/Double) ---
 
     public String getFull_name() { return full_name; }
     public void setFull_name(String full_name) { this.full_name = full_name; }

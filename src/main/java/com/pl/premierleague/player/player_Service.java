@@ -22,11 +22,7 @@ public class player_Service {
         return playerRepository.findAll();
     }
     public List<player> getPlayersByCurrent_Club(String Current_Club) {
-        return playerRepository.findAll().stream()
-                .filter(p -> Current_Club.equals(p.getCurrent_Club()))
-                .collect(Collectors.toList());
-
-
+        return playerRepository.findByClub(Current_Club); // Cambiado de findByCurrent_Club a findByClub
     }
     public List<player> getPlayersByName(String searchText) {
         return playerRepository.findAll().stream()
@@ -71,6 +67,7 @@ public class player_Service {
     }
     @Transactional
     public void deletePlayer(String Full_Name) {
-        playerRepository.deleteById(Full_Name);    }
+        playerRepository.deleteById(Full_Name);
+    }
 
 }
